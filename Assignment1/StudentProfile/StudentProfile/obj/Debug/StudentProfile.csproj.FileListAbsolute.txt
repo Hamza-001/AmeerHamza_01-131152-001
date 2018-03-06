@@ -1,0 +1,6 @@
+c:\users\hamza\documents\visual studio 2015\Projects\StudentProfile\StudentProfile\bin\Debug\StudentProfile.exe.config
+c:\users\hamza\documents\visual studio 2015\Projects\StudentProfile\StudentProfile\bin\Debug\StudentProfile.exe
+c:\users\hamza\documents\visual studio 2015\Projects\StudentProfile\StudentProfile\bin\Debug\StudentProfile.pdb
+c:\users\hamza\documents\visual studio 2015\Projects\StudentProfile\StudentProfile\obj\Debug\StudentProfile.csprojResolveAssemblyReference.cache
+c:\users\hamza\documents\visual studio 2015\Projects\StudentProfile\StudentProfile\obj\Debug\StudentProfile.exe
+c:\users\hamza\documents\visual studio 2015\Projects\StudentProfile\StudentProfile\obj\Debug\StudentProfile.pdb
