@@ -1,0 +1,15 @@
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.DeleteRecord.resources
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.InsertRecord.resources
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.Main.resources
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.Properties.Resources.resources
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.csproj.GenerateResource.Cache
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\bin\Debug\VP_Assignment2.exe.config
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\bin\Debug\VP_Assignment2.exe
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\bin\Debug\VP_Assignment2.pdb
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.csprojResolveAssemblyReference.cache
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.exe
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.pdb
+c:\users\hamza\documents\visual studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.TopStudents.resources
+C:\Users\HAMZA\Documents\Visual Studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.SearchStudent.resources
+C:\Users\HAMZA\Documents\Visual Studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.ViewAttendance.resources
+C:\Users\HAMZA\Documents\Visual Studio 2015\Projects\VP_Assignment2\VP_Assignment2\obj\Debug\VP_Assignment2.MarkAttendance.resources

@@ -1,0 +1,35 @@
+01-131152-001
+Ameer Hamza
+3.3
+6
+SE
+Bahria University
+Present
+01-131152-009
+Fiza Asif
+3.4
+6
+SE
+Bahria University
+Present
+01-131152-016
+Mishal Shahid
+3.6
+6
+SE
+Bahria University
+Present
+01-131152-036
+Sana Arooj
+3.8
+6
+SE
+Bahria University
+Present
+01-135226-011
+Huzaifa Sajjad
+3.9
+6
+SE
+Bahria University
+Present
