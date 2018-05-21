@@ -45,6 +45,7 @@
 								    <li>
 									    <div class="fb-share-button" data-href="https://www.facebook.com/w3layouts" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fw3layouts&amp;src=sdkpreparse">Share</a></div>
 								    </li>
+                                   
 								    <li class="news-twitter">
 									    <a href="https://twitter.com/w3layouts" class="twitter-follow-button" data-show-count="false">Follow @w3layouts</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 								    </li>
@@ -72,14 +73,11 @@
 
 					    <div class="all-comments">
 						    <div class="all-comments-info">
-							    <a href="#">Comments</a>
+							    <a href="#">Reviews</a>
 							    <div class="agile-info-wthree-box">
 								    <form>
-									    <input type="text" placeholder="Name" required="">			           					   
-									    <input type="text" placeholder="Email" required="">
-									    <input type="text" placeholder="Phone" required="">
-									    <textarea placeholder="Message" required=""></textarea>
-									    <input type="submit" value="SEND">
+                                        <textarea id="reviewTextArea" cols="20" rows="2" placeholder="Write your review" required="" runat="server"></textarea>
+                                        <asp:Button ID="reviewButton" runat="server" Text="Post" value="Post Review" OnClick="reviewButton_Click" />
 									    <div class="clearfix"> </div>
 								    </form>
 							    </div>

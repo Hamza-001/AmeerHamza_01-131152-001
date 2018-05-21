@@ -16,14 +16,29 @@ namespace VPProject
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if(DBOperations.ConnObject.login(txtUsername.ToString(),txtPassword.ToString()))
+            if(DBOperations.ConnObject.loginAuthentication(txtUsername.ToString(),txtPassword.ToString()))
             {
                 Session["user"] = txtUsername.ToString();
-                Response.Redirect("~/Contact.aspx");
+                Response.Redirect("~/Home.aspx");
             }
             else
             {
                 Response.Write("Login Failed");
+            }
+        }
+
+        protected void registerButton_Click(object sender, EventArgs e)
+        {
+
+            string insertValues = "'" + textName + "','" + textEmail + "','" + textPassword + "'";
+            if (DBOperations.ConnObject.registerUser(insertValues))
+            {
+                usernameLabel.Text = textName.ToString();
+                Response.Redirect("~/Home.aspx");
+            }
+            else
+            {
+                Response.Write("Registration Failed");
             }
         }
     }

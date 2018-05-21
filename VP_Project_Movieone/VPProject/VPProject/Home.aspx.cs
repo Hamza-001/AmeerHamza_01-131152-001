@@ -11,7 +11,8 @@ namespace VPProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            moviesList.DataSource = DBOperations.ConnObject.getMovies();
+            moviesList.DataBind();
         }
     }
 }
