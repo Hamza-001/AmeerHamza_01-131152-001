@@ -11,14 +11,27 @@ namespace VPProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["user"] == null)
+            {
+                usernameLabel.Text = "Anonymous";
+                loginModalLink.Visible = true;
+                signoutButton.Visible = false;
+                
+            }
+            else
+            {
+                usernameLabel.Text = DBOperations.ConnObject.getUsername(Session["user"].ToString());
+                loginModalLink.Visible = false;
+                signoutButton.Visible = true;
 
+            }
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void loginButtton_Click(object sender, EventArgs e)
         {
-            if(DBOperations.ConnObject.loginAuthentication(txtUsername.ToString(),txtPassword.ToString()))
+            if(DBOperations.ConnObject.loginAuthentication(textUserEmail.Text.ToString(),textLoginPassword.Text.ToString()))
             {
-                Session["user"] = txtUsername.ToString();
+                Session["user"] = textUserEmail.Text.ToString();
                 Response.Redirect("~/Home.aspx");
             }
             else
@@ -29,17 +42,21 @@ namespace VPProject
 
         protected void registerButton_Click(object sender, EventArgs e)
         {
-
-            string insertValues = "'" + textName + "','" + textEmail + "','" + textPassword + "'";
-            if (DBOperations.ConnObject.registerUser(insertValues))
+            if (DBOperations.ConnObject.registerUser(textName.Text.ToString(), textEmail.Text.ToString(), textPassword.Text.ToString()))
             {
-                usernameLabel.Text = textName.ToString();
+                usernameLabel.Text = textName.Text.ToString();
                 Response.Redirect("~/Home.aspx");
             }
             else
             {
                 Response.Write("Registration Failed");
             }
+        }
+
+        protected void signoutButton_Click(object sender, EventArgs e)
+        {
+            Session["user"] = null;
+            Response.Redirect("~/Home.aspx");
         }
     }
 }

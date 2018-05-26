@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MovieSiteMasterPage.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="VPProject.Contact" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MovieSiteMasterPage.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="VPProject.Contact" EnableEventValidation="false" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
@@ -52,7 +52,7 @@
 					</ul>
 				</div>
 				<div class="clearfix"></div>
-				<form action="#" method="post">
+				<form>
 					<input type="text" name="your name" placeholder="FIRST NAME" required="">
 					<input type="text" name="your name" placeholder="LAST NAME" required="">
 					<input type="text" name="your email" placeholder="EMAIL" required="">

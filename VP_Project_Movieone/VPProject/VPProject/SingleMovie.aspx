@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MovieSiteMasterPage.Master" AutoEventWireup="true" CodeBehind="SingleMovie.aspx.cs" Inherits="VPProject.SingleMovie" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MovieSiteMasterPage.Master" AutoEventWireup="true" CodeBehind="SingleMovie.aspx.cs" Inherits="VPProject.SingleMovie" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
     Movie Review
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MovieSiteMasterPage.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="VPProject.Home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MovieSiteMasterPage.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="VPProject.Home" EnableEventValidation="false" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
@@ -321,7 +321,8 @@
 
 
                             <asp:ListView ID="moviesList" runat="server">
-                            <ItemTemplate>
+                            <ItemTemplate>'=
+
 							<div class="col-md-2 w3l-movie-gride-agile">
 								<a href="single.html" class="hvr-shutter-out-horizontal"><img src="<%# Eval("image") %>" title="album-name" class="img-responsive" alt=" " />
 									<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
@@ -362,6 +363,5 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+		
 </asp:Content>
