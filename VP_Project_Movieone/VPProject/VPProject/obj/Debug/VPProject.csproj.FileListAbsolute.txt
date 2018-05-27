@@ -33,8 +33,9 @@ F:\Bs. Software Engineering\BSE-Semester-6\AmeerHamza_01-131152-001\VP_Project_M
 F:\Bs. Software Engineering\BSE-Semester-6\AmeerHamza_01-131152-001\VP_Project_Movieone\VPProject\VPProject\bin\VPProject.dll.config
 F:\Bs. Software Engineering\BSE-Semester-6\AmeerHamza_01-131152-001\VP_Project_Movieone\VPProject\VPProject\bin\VPProject.dll
 F:\Bs. Software Engineering\BSE-Semester-6\AmeerHamza_01-131152-001\VP_Project_Movieone\VPProject\VPProject\bin\VPProject.pdb
+F:\Bs. Software Engineering\BSE-Semester-6\AmeerHamza_01-131152-001\VP_Project_Movieone\VPProject\VPProject\bin\AjaxControlToolkit.dll
 F:\Bs. Software Engineering\BSE-Semester-6\AmeerHamza_01-131152-001\VP_Project_Movieone\VPProject\VPProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 F:\Bs. Software Engineering\BSE-Semester-6\AmeerHamza_01-131152-001\VP_Project_Movieone\VPProject\VPProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\Bs. Software Engineering\BSE-Semester-6\AmeerHamza_01-131152-001\VP_Project_Movieone\VPProject\VPProject\obj\Debug\VPProject.csprojResolveAssemblyReference.cache
 F:\Bs. Software Engineering\BSE-Semester-6\AmeerHamza_01-131152-001\VP_Project_Movieone\VPProject\VPProject\obj\Debug\VPProject.dll
 F:\Bs. Software Engineering\BSE-Semester-6\AmeerHamza_01-131152-001\VP_Project_Movieone\VPProject\VPProject\obj\Debug\VPProject.pdb
+F:\Bs. Software Engineering\BSE-Semester-6\AmeerHamza_01-131152-001\VP_Project_Movieone\VPProject\VPProject\obj\Debug\VPProject.csprojResolveAssemblyReference.cache

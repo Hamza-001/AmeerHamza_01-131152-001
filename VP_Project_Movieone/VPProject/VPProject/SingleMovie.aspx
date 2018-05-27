@@ -18,18 +18,34 @@
 			    <div class="single-page-agile-info">
                        <!-- /movie-browse-agile -->
                                <div class="show-top-grids-w3lagile">
-				    <div class="col-sm-8 single-left">
+				    <div class="col-sm-12 single-middle">
+                        <asp:ListView ID="dataView" runat="server">
+                            <ItemTemplate>
 					    <div class="song">
 						    <div class="song-info">
-							    <h3>THE LEGEND OF TARZAN - Official Trailer 2</h3>	
+							    <h3><%# Eval("moviename") %></h3>	
 					    </div>
 						    <div class="video-grid-single-page-agileits">
-							    <div data-video="dLmKio67pVQ" id="video"> <img src="images/5.jpg" alt="" class="img-responsive" /> </div>
+							    <div data-video="<%# Eval("trailer") %>" id="video"> <img src="<%# Eval("imagebanner") %>" alt="" class="img-responsive" /> </div>
 						    </div>
 					    </div>
+                                </ItemTemplate>
+                        </asp:ListView>
 					    <div class="song-grid-right">
 						    <div class="share">
-							    <h5>Share this</h5>
+							    <h4>
+                                    <asp:Label ID="ratingLabel" runat="server" Font-Bold="False" Text="Rating: "></asp:Label>
+                                    <asp:Label ID="ratingCount" runat="server" Text="0"></asp:Label>
+                                    <image src="images/star.png" width="20px" height="20px"></image>
+                                </h4>
+                                <p>
+                                    &nbsp;</p>
+                                <h6>
+                                    <asp:Label ID="totalReviews" runat="server" Text="Total Reviews: "></asp:Label>
+                                    <asp:Label ID="totalReviewsLabel" runat="server" Text="0"></asp:Label>
+                                </h6>
+                                <p>&nbsp;</p>
+                                <h5>Share this</h5>
 							    <div class="single-agile-shar-buttons">
 							    <ul>
 								    <li>
@@ -53,17 +69,7 @@
 									    <a href="https://twitter.com/intent/tweet?screen_name=w3layouts" class="twitter-mention-button" data-show-count="false">Tweet to @w3layouts</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 								    </li>
 								    <li>
-									    <!-- Place this tag where you want the +1 button to render. -->
-									    <div class="g-plusone" data-size="medium"></div>
-
-									    <!-- Place this tag after the last +1 button tag. -->
-									    <script type="text/javascript">
-									      (function() {
-										    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-										    po.src = 'https://apis.google.com/js/platform.js';
-										    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-									      })();
-									    </script>
+									   
 								    </li>
 							    </ul>
 						    </div>
@@ -73,414 +79,114 @@
 
 					    <div class="all-comments">
 						    <div class="all-comments-info">
-							    <a href="#">Reviews</a>
-							    <div class="agile-info-wthree-box">
-								    <form>
-                                        <textarea id="reviewTextArea" cols="20" rows="2" placeholder="Write your review" required="" runat="server"></textarea>
-                                        <asp:Button ID="reviewButton" runat="server" Text="Post" value="Post Review" OnClick="reviewButton_Click" />
-									    <div class="clearfix"> </div>
-								    </form>
-							    </div>
-						    </div>
-						    <div class="media-grids">
-							    <div class="media">
-								    <h5>TOM BROWN</h5>
-								    <div class="media-left">
-									    <a href="#">
-										    <img src="images/user.jpg" title="One movies" alt=" " />
-									    </a>
-								    </div>
-								    <div class="media-body">
-									    <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
-									    <span>View all posts by :<a href="#"> Admin </a></span>
-								    </div>
-							    </div>
-							    <div class="media">
-								    <h5>MARK JOHNSON</h5>
-								    <div class="media-left">
-									    <a href="#">
-									    <img src="images/user.jpg" title="One movies" alt=" " />
-									    </a>
-								    </div>
-								    <div class="media-body">
-									    <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
-									    <span>View all posts by :<a href="#"> Admin </a></span>
-								    </div>
-							    </div>
-							    <div class="media">
-								    <h5>STEVEN SMITH</h5>
-								    <div class="media-left">
-									    <a href="#">
-									    <img src="images/user.jpg" title="One movies" alt=" " />
-									    </a>
-								    </div>
-								    <div class="media-body">
-									    <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
-									    <span>View all posts by :<a href="#"> Admin </a></span>
-								    </div>
-							    </div>
-
+							    <h3>Reviews</h3>
+                                <p>&nbsp;</p>
+                                <p>
+                                    &nbsp;</p>
+                                <p>&nbsp;</p>
+                                <p>
+                                    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource2" Height="50px" Width="125px">
+                                        <EditRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                        <Fields>
+                                            <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                                            <asp:BoundField DataField="review" HeaderText="review" SortExpression="review" />
+                                            <asp:BoundField DataField="rating" HeaderText="rating" SortExpression="rating" />
+                                            <asp:CommandField ShowInsertButton="True" />
+                                        </Fields>
+                                        <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                        <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                        <RowStyle BackColor="White" ForeColor="#330099" />
+                                    </asp:DetailsView>
+                                </p>
+                                <p>&nbsp;</p>
+                                <p>
+                                    <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource3" Height="50px" Width="125px">
+                                        <EditRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                        <Fields>
+                                            <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                                            <asp:BoundField DataField="review" HeaderText="review" SortExpression="review" />
+                                            <asp:BoundField DataField="rating" HeaderText="rating" SortExpression="rating" />
+                                            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+                                        </Fields>
+                                        <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                        <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                        <RowStyle BackColor="White" ForeColor="#330099" />
+                                    </asp:DetailsView>
+                                </p>
+                                <p>
+                                    &nbsp;</p>
+                                <p>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MoviesDBConnectionString %>" SelectCommand="SELECT [id], [user_id], [review], [rating] FROM [MovieReview]"></asp:SqlDataSource>
+                                </p>
+                                <p>
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MoviesDBConnectionString %>" DeleteCommand="DELETE FROM [MovieReview] WHERE [id] = @id" InsertCommand="INSERT INTO [MovieReview] ([review], [rating]) VALUES (@review, @rating)" SelectCommand="SELECT [id], [review], [rating] FROM [MovieReview] WHERE ([id] = @id)" UpdateCommand="UPDATE [MovieReview] SET [review] = @review, [rating] = @rating WHERE [id] = @id">
+                                        <DeleteParameters>
+                                            <asp:Parameter Name="id" Type="Int32" />
+                                        </DeleteParameters>
+                                        <InsertParameters>
+                                            <asp:Parameter Name="review" Type="String" />
+                                            <asp:Parameter Name="rating" Type="Double" />
+                                        </InsertParameters>
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="GridView1" Name="id" PropertyName="SelectedValue" Type="Int32" />
+                                        </SelectParameters>
+                                        <UpdateParameters>
+                                            <asp:Parameter Name="review" Type="String" />
+                                            <asp:Parameter Name="rating" Type="Double" />
+                                            <asp:Parameter Name="id" Type="Int32" />
+                                        </UpdateParameters>
+                                    </asp:SqlDataSource>
+                                </p>
+                                <p>
+                                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:MoviesDBConnectionString %>" DeleteCommand="DELETE FROM [MovieReview] WHERE [id] = @id" InsertCommand="INSERT INTO [MovieReview] ([review], [rating]) VALUES (@review, @rating)" SelectCommand="SELECT [id], [review], [rating] FROM [MovieReview] WHERE (([id] = @id) AND ([user_id] = @user_id))" UpdateCommand="UPDATE [MovieReview] SET [review] = @review, [rating] = @rating WHERE [id] = @id">
+                                        <DeleteParameters>
+                                            <asp:Parameter Name="id" Type="Int32" />
+                                        </DeleteParameters>
+                                        <InsertParameters>
+                                            <asp:Parameter Name="review" Type="String" />
+                                            <asp:Parameter Name="rating" Type="Double" />
+                                        </InsertParameters>
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="GridView1" Name="id" PropertyName="SelectedValue" Type="Int32" />
+                                            <asp:SessionParameter Name="user_id" SessionField="userID" Type="Int32" />
+                                        </SelectParameters>
+                                        <UpdateParameters>
+                                            <asp:Parameter Name="review" Type="String" />
+                                            <asp:Parameter Name="rating" Type="Double" />
+                                            <asp:Parameter Name="id" Type="Int32" />
+                                        </UpdateParameters>
+                                    </asp:SqlDataSource>
+                                </p>
 						    </div>
 					    </div>
 				    </div>
-				    <div class="col-md-4 single-right">
-					    <h3>Up Next</h3>
-					    <div class="single-grid-right">
-						    <div class="single-right-grids">
-							    <div class="col-md-4 single-right-grid-left">
-								    <a href="single.html"><img src="images/m1.jpg" alt="" /></a>
-							    </div>
-							    <div class="col-md-8 single-right-grid-right">
-								    <a href="single.html" class="title"> Nullam interdum metus</a>
-								    <p class="author"><a href="#" class="author">John Maniya</a></p>
-								    <p class="views">2,114,200 views</p>
-							    </div>
-							    <div class="clearfix"> </div>
-						    </div>
-						    <div class="single-right-grids">
-							    <div class="col-md-4 single-right-grid-left">
-								    <a href="single.html"><img src="images/m2.jpg" alt="" /></a>
-							    </div>
-							    <div class="col-md-8 single-right-grid-right">
-								    <a href="single.html" class="title"> Nullam interdum metus</a>
-								    <p class="author"><a href="#" class="author">John Maniya</a></p>
-								    <p class="views">2,114,200 views </p>
-							    </div>
-							    <div class="clearfix"> </div>
-						    </div>
-						    <div class="single-right-grids">
-							    <div class="col-md-4 single-right-grid-left">
-								    <a href="single.html"><img src="images/m3.jpg" alt="" /></a>
-							    </div>
-							    <div class="col-md-8 single-right-grid-right">
-								    <a href="single.html" class="title"> Nullam interdum metus</a>
-								    <p class="author"><a href="#" class="author">John Maniya</a></p>
-								    <p class="views">2,114,200 views</p>
-							    </div>
-							    <div class="clearfix"> </div>
-						    </div>
-						    <div class="single-right-grids">
-							    <div class="col-md-4 single-right-grid-left">
-								    <a href="single.html"><img src="images/m4.jpg" alt="" /></a>
-							    </div>
-							    <div class="col-md-8 single-right-grid-right">
-								    <a href="single.html" class="title"> Nullam interdum metus</a>
-								    <p class="author"><a href="#" class="author">John Maniya</a></p>
-								    <p class="views">2,114,200 views</p>
-							    </div>
-							    <div class="clearfix"> </div>
-						    </div>
-						    <div class="single-right-grids">
-							    <div class="col-md-4 single-right-grid-left">
-								    <a href="single.html"><img src="images/m5.jpg" alt="" /></a>
-							    </div>
-							    <div class="col-md-8 single-right-grid-right">
-								    <a href="single.html" class="title"> Nullam interdum metus</a>
-								    <p class="author"><a href="#" class="author">John Maniya</a></p>
-								    <p class="views">2,114,200 views</p>
-							    </div>
-							    <div class="clearfix"> </div>
-						    </div>
-						    <div class="single-right-grids">
-							    <div class="col-md-4 single-right-grid-left">
-								    <a href="single.html"><img src="images/c5.jpg" alt="" /></a>
-							    </div>
-							    <div class="col-md-8 single-right-grid-right">
-								    <a href="single.html" class="title"> Nullam interdum metus</a>
-								    <p class="author"><a href="#" class="author">John Maniya</a></p>
-								    <p class="views">2,114,200 views</p>
-							    </div>
-							    <div class="clearfix"> </div>
-						    </div>
-						    <div class="single-right-grids">
-							    <div class="col-md-4 single-right-grid-left">
-								    <a href="single.html"><img src="images/m6.jpg" alt="" /></a>
-							    </div>
-							    <div class="col-md-8 single-right-grid-right">
-								    <a href="single.html" class="title"> Nullam interdum metus</a>
-								    <p class="author">By <a href="#" class="author">John Maniya</a></p>
-								    <p class="views">2,114,200 views</p>
-							    </div>
-							    <div class="clearfix"> </div>
-						    </div>
-						    <div class="single-right-grids">
-							    <div class="col-md-4 single-right-grid-left">
-								    <a href="single.html"><img src="images/m15.jpg" alt="" /></a>
-							    </div>
-							    <div class="col-md-8 single-right-grid-right">
-								    <a href="single.html" class="title"> Nullam interdum metus</a>
-								    <p class="author">By <a href="#" class="author">John Maniya</a></p>
-								    <p class="views">2,114,200 views</p>
-							    </div>
-							    <div class="clearfix"> </div>
-						    </div>
-
-					    </div>
-				    </div>
-				
+				 
 
 				
-				    <div class="clearfix"> </div>
+				    <div class="clearfix"> 
+                                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1">
+                                        <Columns>
+                                            <asp:CommandField ShowSelectButton="True" />
+                                            <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                                            <asp:BoundField DataField="user_id" HeaderText="user_id" SortExpression="user_id" />
+                                            <asp:BoundField DataField="review" HeaderText="review" SortExpression="review" />
+                                            <asp:BoundField DataField="rating" HeaderText="rating" SortExpression="rating" />
+                                        </Columns>
+                                        <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                        <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                        <RowStyle BackColor="White" ForeColor="#330099" />
+                                        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                        <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                        <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                        <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                        <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                                    </asp:GridView>
+                                   </div>
 			    </div>
-				    <!-- //movie-browse-agile -->
-				    <!--body wrapper start-->
-			    <div class="w3_agile_banner_bottom_grid">
-				    <div id="owl-demo" class="owl-carousel owl-theme">
-					    <div class="item">
-						    <div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-							    <a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m13.jpg" title="album-name" class="img-responsive" alt=" " />
-								    <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-							    </a>
-							    <div class="mid-1 agileits_w3layouts_mid_1_home">
-								    <div class="w3l-movie-text">
-									    <h6><a href="single.html">Citizen Soldier</a></h6>							
-								    </div>
-								    <div class="mid-2 agile_mid_2_home">
-									    <p>2016</p>
-									    <div class="block-stars">
-										    <ul class="w3l-ratings">
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-										    </ul>
-									    </div>
-									    <div class="clearfix"></div>
-								    </div>
-							    </div>
-							    <div class="ribben">
-								    <p>NEW</p>
-							    </div>
-						    </div>
-					    </div>
-					    <div class="item">
-						    <div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-							    <a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m11.jpg" title="album-name" class="img-responsive" alt=" " />
-								    <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-							    </a>
-							    <div class="mid-1 agileits_w3layouts_mid_1_home">
-								    <div class="w3l-movie-text">
-									    <h6><a href="single.html">X-Men</a></h6>							
-								    </div>
-								    <div class="mid-2 agile_mid_2_home">
-									    <p>2016</p>
-									    <div class="block-stars">
-										    <ul class="w3l-ratings">
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-										    </ul>
-									    </div>
-									    <div class="clearfix"></div>
-								    </div>
-							    </div>
-							    <div class="ribben">
-								    <p>NEW</p>
-							    </div>
-						    </div>
-					    </div>
-					    <div class="item">
-						    <div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-							    <a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m12.jpg" title="album-name" class="img-responsive" alt=" " />
-								    <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-							    </a>
-							    <div class="mid-1 agileits_w3layouts_mid_1_home">
-								    <div class="w3l-movie-text">
-									    <h6><a href="single.html">Greater</a></h6>							
-								    </div>
-								    <div class="mid-2 agile_mid_2_home">
-									    <p>2016</p>
-									    <div class="block-stars">
-										    <ul class="w3l-ratings">
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-										    </ul>
-									    </div>
-									    <div class="clearfix"></div>
-								    </div>
-							    </div>
-							    <div class="ribben">
-								    <p>NEW</p>
-							    </div>
-						    </div>
-					    </div>
-					    <div class="item">
-						    <div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-							    <a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m7.jpg" title="album-name" class="img-responsive" alt=" " />
-								    <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-							    </a>
-							    <div class="mid-1 agileits_w3layouts_mid_1_home">
-								    <div class="w3l-movie-text">
-									    <h6><a href="single.html">Light B/t Oceans</a></h6>							
-								    </div>
-								    <div class="mid-2 agile_mid_2_home">
-									    <p>2016</p>
-									    <div class="block-stars">
-										    <ul class="w3l-ratings">
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-										    </ul>
-									    </div>
-									    <div class="clearfix"></div>
-								    </div>
-							    </div>
-							    <div class="ribben">
-								    <p>NEW</p>
-							    </div>
-						    </div>
-					    </div>
-					    <div class="item">
-						    <div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-							    <a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m8.jpg" title="album-name" class="img-responsive" alt=" " />
-								    <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-							    </a>
-							    <div class="mid-1 agileits_w3layouts_mid_1_home">
-								    <div class="w3l-movie-text">
-									    <h6><a href="single.html">The BFG</a></h6>							
-								    </div>
-								    <div class="mid-2 agile_mid_2_home">
-									    <p>2016</p>
-									    <div class="block-stars">
-										    <ul class="w3l-ratings">
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-										    </ul>
-									    </div>
-									    <div class="clearfix"></div>
-								    </div>
-							    </div>
-							    <div class="ribben">
-								    <p>NEW</p>
-							    </div>
-						    </div>
-					    </div>
-					    <div class="item">
-						    <div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-							    <a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m9.jpg" title="album-name" class="img-responsive" alt=" " />
-								    <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-							    </a>
-							    <div class="mid-1 agileits_w3layouts_mid_1_home">
-								    <div class="w3l-movie-text">
-									    <h6><a href="single.html">Central Intelligence</a></h6>							
-								    </div>
-								    <div class="mid-2 agile_mid_2_home">
-									    <p>2016</p>
-									    <div class="block-stars">
-										    <ul class="w3l-ratings">
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-										    </ul>
-									    </div>
-									    <div class="clearfix"></div>
-								    </div>
-							    </div>
-							    <div class="ribben">
-								    <p>NEW</p>
-							    </div>
-						    </div>
-					    </div>
-					    <div class="item">
-						    <div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-							    <a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m10.jpg" title="album-name" class="img-responsive" alt=" " />
-								    <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-							    </a>
-							    <div class="mid-1 agileits_w3layouts_mid_1_home">
-								    <div class="w3l-movie-text">
-									    <h6><a href="single.html">Don't Think Twice</a></h6>							
-								    </div>
-								    <div class="mid-2 agile_mid_2_home">
-									    <p>2016</p>
-									    <div class="block-stars">
-										    <ul class="w3l-ratings">
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-										    </ul>
-									    </div>
-									    <div class="clearfix"></div>
-								    </div>
-							    </div>
-							    <div class="ribben">
-								    <p>NEW</p>
-							    </div>
-						    </div>
-					    </div>
-					    <div class="item">
-						    <div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-							    <a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m17.jpg" title="album-name" class="img-responsive" alt=" " />
-								    <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-							    </a>
-							    <div class="mid-1 agileits_w3layouts_mid_1_home">
-								    <div class="w3l-movie-text">
-									    <h6><a href="single.html">Peter</a></h6>							
-								    </div>
-								    <div class="mid-2 agile_mid_2_home">
-									    <p>2016</p>
-									    <div class="block-stars">
-										    <ul class="w3l-ratings">
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-										    </ul>
-									    </div>
-									    <div class="clearfix"></div>
-								    </div>
-							    </div>
-							    <div class="ribben">
-								    <p>NEW</p>
-							    </div>
-						    </div>
-					    </div>
-					    <div class="item">
-						    <div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-							    <a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m15.jpg" title="album-name" class="img-responsive" alt=" " />
-								    <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-							    </a>
-							    <div class="mid-1 agileits_w3layouts_mid_1_home">
-								    <div class="w3l-movie-text">
-									    <h6><a href="single.html">God’s Compass</a></h6>							
-								    </div>
-								    <div class="mid-2 agile_mid_2_home">
-									    <p>2016</p>
-									    <div class="block-stars">
-										    <ul class="w3l-ratings">
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-										    </ul>
-									    </div>
-									    <div class="clearfix"></div>
-								    </div>
-							    </div>
-							    <div class="ribben">
-								    <p>NEW</p>
-							    </div>
-						    </div>
-					    </div>
-				    </div>
-			    </div>
-		    <!--body wrapper end-->
+			
 						
 							 
 				    </div>

@@ -11,7 +11,7 @@ namespace VPProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["user"] == null)
+            if(Session["userID"] == null)
             {
                 usernameLabel.Text = "Anonymous";
                 loginModalLink.Visible = true;
@@ -20,7 +20,7 @@ namespace VPProject
             }
             else
             {
-                usernameLabel.Text = DBOperations.ConnObject.getUsername(Session["user"].ToString());
+                usernameLabel.Text = DBOperations.ConnObject.getUsername(Session["userID"].ToString());
                 loginModalLink.Visible = false;
                 signoutButton.Visible = true;
 
@@ -31,7 +31,7 @@ namespace VPProject
         {
             if(DBOperations.ConnObject.loginAuthentication(textUserEmail.Text.ToString(),textLoginPassword.Text.ToString()))
             {
-                Session["user"] = textUserEmail.Text.ToString();
+                Session["userID"] = DBOperations.ConnObject.getUserID(textUserEmail.Text.ToString());
                 Response.Redirect("~/Home.aspx");
             }
             else
@@ -44,7 +44,7 @@ namespace VPProject
         {
             if (DBOperations.ConnObject.registerUser(textName.Text.ToString(), textEmail.Text.ToString(), textPassword.Text.ToString()))
             {
-                usernameLabel.Text = textName.Text.ToString();
+                Session["userID"] = DBOperations.ConnObject.getUserID(textUserEmail.Text.ToString());
                 Response.Redirect("~/Home.aspx");
             }
             else
@@ -55,7 +55,7 @@ namespace VPProject
 
         protected void signoutButton_Click(object sender, EventArgs e)
         {
-            Session["user"] = null;
+            Session["userID"] = null;
             Response.Redirect("~/Home.aspx");
         }
     }

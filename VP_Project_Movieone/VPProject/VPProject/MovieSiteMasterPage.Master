@@ -74,7 +74,7 @@
         <div class="header">
 		<div class="container">
 			<div class="w3layouts_logo">
-				<a href="index.html"><h1>One<span>Movies</span></h1></a>
+				<a href="home.aspx"><h1>One<span>Movies</span></h1></a>
 			</div>
 			<div class="w3_search">
 				
@@ -128,7 +128,8 @@
                                             <asp:Button ID="registerButton" runat="server" Text="Register" value="Register" OnClick="registerButton_Click" />
 								        </form>
 							      </div>
-							      <div class="cta"><a href="#">Forgot your password?</a></div>
+
+							      <div class="cta"><a href="contact.aspx">Forgot your password?</a></div>
                                    
 							    </div>
 						    </div>
@@ -259,12 +260,12 @@
 			<div class="w3ls_footer_grid">
 				
 				<div class="col-md-6 w3ls_footer_grid_right">
-					<a href="index.html"><h2>One<span>Movies</span></h2></a>
+					<a href="home.aspx"><h2>One<span>Movies</span></h2></a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="col-md-5 w3ls_footer_grid1_left">
-				<p>&copy; 2016 One Movies. All rights reserved</p>
+				<p>&copy; 2018 One Movies. All rights reserved</p>
 			</div>
 			<div class="col-md-7 w3ls_footer_grid1_right">
 				<ul>
@@ -274,20 +275,9 @@
 					<li>
 						<a href="faq.html">FAQ</a>
 					</li>
-					<%--<li>
-						<a href="horror.html">Action</a>
-					</li>
+				
 					<li>
-						<a href="genres.html">Adventure</a>
-					</li>
-					<li>
-						<a href="comedy.html">Comedy</a>
-					</li>
-					<li>
-						<a href="icons.html">Icons</a>
-					</li>--%>
-					<li>
-						<a href="contact.html">Contact Us</a>
+						<a href="contact.aspx">Contact Us</a>
 					</li>
 				</ul>
 			</div>
@@ -316,15 +306,15 @@
 	    <script type="text/javascript">
 		        $(document).ready(function() {
 			        
-				        var defaults = {
-				        containerID: 'toTop', // fading element id
-				        containerHoverID: 'toTopHover', // fading element hover id
-				        scrollSpeed: 1200,
-				        easingType: 'linear' 
-				        };
+				        //var defaults = {
+				        //containerID: 'toTop', // fading element id
+				        //containerHoverID: 'toTopHover', // fading element hover id
+				        //scrollSpeed: 1200,
+				        //easingType: 'linear' 
+				        //};
 			        
 								
-			        $().UItoTop({ easingType: 'easeOutQuart' });
+			        //$().UItoTop({ easingType: 'easeOutQuart' });
 								
 			        });
 	        </script>

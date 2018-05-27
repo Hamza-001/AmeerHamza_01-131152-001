@@ -11,20 +11,29 @@ namespace VPProject
 {
     public partial class SingleMovie : System.Web.UI.Page
     {
+        int movieID;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            // movieID = int.Parse(Request.QueryString["id"].ToString());
 
+            //dataView.DataSource = DBOperations.ConnObject.getMovieDetails(movieID);
+            //dataView.DataBind();
+            //ratingCount.Text = DBOperations.ConnObject.getRating(movieID).ToString();
+            //totalReviewsLabel.Text = DBOperations.ConnObject.getReviewCount(movieID).ToString();
         }
 
         protected void reviewButton_Click(object sender, EventArgs e)
         {
-            if (Session["user"] == null)
-                Response.Write("Login to write reviews!");
+            if (Session["userID"] == null)
+            {
+                Response.Redirect("~/home.aspx");
+                Response.Write("Only Registered Users are allowed to write review!.");
+            }
             else
             {
 
-                Response.Redirect("~/SingleMovie.aspx");
+                Response.Redirect("~/home.aspx");
             }
         }
     }
