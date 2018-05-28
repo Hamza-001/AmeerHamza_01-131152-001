@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MovieSiteMasterPage.master.cs" Inherits="VPProject.MovieSiteMasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MovieSiteMasterPage.master.cs"  Inherits="VPProject.MovieSiteMasterPage" %>
 
 <!DOCTYPE html>
 
@@ -63,6 +63,13 @@
 		    });
 	    });
     </script>
+    <script type="text/javascript">
+Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequest);
+function BeginRequest(sender, e) {
+    e.get_postBackElement().disabled = true;
+
+}
+     </script>
     <!-- start-smoth-scrolling -->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -113,23 +120,22 @@
                                
 							      <div class="form">
 								    <h3>Login to your account</h3>
-								    <form>
+								   
                                         <asp:TextBox ID="textUserEmail" type="email" placeholder="Email" runat="server"></asp:TextBox>
                                         <asp:TextBox ID="textLoginPassword" type="password" placeholder="Password" runat="server"></asp:TextBox>
                                         <asp:Button ID="loginButtton" type="submit" value="Login" runat="server" Text="Sign In" OnClick="loginButtton_Click" />
-								   </form>
+								   
 							      </div>        
 							      <div class="form">
 								    <h3>Create an account</h3>
-                                      <form>
+                                      
                                             <asp:TextBox ID="textName" type="text"  placeholder="Name"  runat="server"></asp:TextBox>
 					                        <asp:TextBox ID="textEmail" type="email"  placeholder="Email"  runat="server"></asp:TextBox>
                                             <asp:TextBox ID="textPassword" type="password"  placeholder="Password" runat="server"></asp:TextBox>
                                             <asp:Button ID="registerButton" runat="server" Text="Register" value="Register" OnClick="registerButton_Click" />
-								        </form>
+								      
 							      </div>
 
-							      <div class="cta"><a href="contact.aspx">Forgot your password?</a></div>
                                    
 							    </div>
 						    </div>
@@ -302,6 +308,11 @@
         });
         </script>
         <!-- //Bootstrap Core JavaScript -->
+            <script>
+
+            </script>
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwDV1tTb03r-wYVogvaxzKp-hr3kF4qQM&libraries=places"></script>
+
         <!-- here stars scrolling icon -->
 	    <script type="text/javascript">
 		        $(document).ready(function() {

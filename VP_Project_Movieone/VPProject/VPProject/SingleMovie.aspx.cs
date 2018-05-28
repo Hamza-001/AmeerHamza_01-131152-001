@@ -15,26 +15,27 @@ namespace VPProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // movieID = int.Parse(Request.QueryString["id"].ToString());
-
-            //dataView.DataSource = DBOperations.ConnObject.getMovieDetails(movieID);
-            //dataView.DataBind();
-            //ratingCount.Text = DBOperations.ConnObject.getRating(movieID).ToString();
-            //totalReviewsLabel.Text = DBOperations.ConnObject.getReviewCount(movieID).ToString();
-        }
-
-        protected void reviewButton_Click(object sender, EventArgs e)
-        {
-            if (Session["userID"] == null)
+            if(Session["userID"]==null)
             {
-                Response.Redirect("~/home.aspx");
-                Response.Write("Only Registered Users are allowed to write review!.");
+                GridView1.Visible = false;
             }
             else
             {
-
-                Response.Redirect("~/home.aspx");
+                GridView1.Visible = true;
+                GridView1.SelectedIndex = 1;
             }
+            if (!IsPostBack)
+            {
+                movieID = int.Parse(Request.QueryString["id"].ToString());
+
+                dataView.DataSource = DBOperations.ConnObject.getMovieDetails(movieID);
+                dataView.DataBind();
+                ratingCount.Text = DBOperations.ConnObject.getRating(movieID).ToString();
+                totalReviewsLabel.Text = DBOperations.ConnObject.getReviewCount(movieID).ToString();
+            }
+            
         }
+
+      
     }
 }

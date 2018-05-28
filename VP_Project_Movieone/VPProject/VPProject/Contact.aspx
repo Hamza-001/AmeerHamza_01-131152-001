@@ -36,9 +36,8 @@
 						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 					</div>
 					<h3>Email</h3>
-					<h4><a href="mailto:info@example.com">example1@mail.com</a></h4>
-					<h4><a href="mailto:info@example.com">example2@mail.com</a></h4>
-					<h4><a href="mailto:info@example.com">example3@mail.com</a></h4>
+					<h4><a href="mailto:ameerhamza.buic@gmail.com">ameerhamza.buic@gmail.com</a></h4>
+			
 				</div>
 				<div class="col-md-3 social-w3l">
 					<div class="icon-w3">
